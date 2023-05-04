@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation
+{% endblock %}
+
+{% block body %}
+	<h1 class="title-reservation">RESERVATION</h1>
+
+	<div class="connection-inscription">
+		<div class="inscription">
+			{{render (controller('App\\Controller\\RegistrationController::register'))}}
+		</div>
+		<div class="connection">
+			{{render (controller('App\\Controller\\SecurityController::logiconly'))}}
+		</div>
+	</div>
+
+{% endblock %}

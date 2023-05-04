@@ -37,10 +37,6 @@ class Reservation
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $updated_at = null;
 
-    #[ORM\ManyToOne(inversedBy: 'reservations')]
-    #[ORM\JoinColumn(nullable: true)]
-    private ?User $user = null;
-
     #[ORM\Column(length: 60)]
     private ?string $Firstname = null;
 
@@ -52,6 +48,9 @@ class Reservation
 
     #[ORM\Column(type: Types::JSON)]
     private array $allergy = [];
+
+    #[ORM\ManyToOne(inversedBy: 'reservations')]
+    private ?User $user = null;
 
     public function getId(): ?string
     {
@@ -90,18 +89,6 @@ class Reservation
     public function getUpdatedAt(): ?\DateTimeInterface
     {
         return $this->updated_at;
-    }
-
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
-
-        return $this;
     }
 
     public function getFirstname(): ?string
@@ -148,6 +135,18 @@ class Reservation
     public function setAllergy(array $allergy): self
     {
         $this->allergy = $allergy;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

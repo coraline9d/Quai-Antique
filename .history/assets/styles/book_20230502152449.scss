@@ -1,0 +1,19 @@
+@media (min-width: 1235px) {
+    .connexion-menu {
+      column-count: 2;
+    }
+  }
+  
+  @media (max-width: 1234px) {
+    .connexion-menu {
+      column-count: 1;
+    }
+
+    .formula{
+      margin-bottom: 70px;
+    }
+
+    .formula:last-child{
+      margin-bottom: 30px;
+    }
+  }

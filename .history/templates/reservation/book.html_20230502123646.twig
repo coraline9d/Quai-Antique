@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>Connexion et Inscription</h1>
+
+	{{include "security/login.html.twig" }}
+
+	<h2>Inscription</h2>
+	{{ form_start(registration_form) }}
+	{{ form_widget(registration_form) }}
+	<button type="submit">Inscription</button>
+	{{ form_end(registration_form) }}
+{% endblock %}

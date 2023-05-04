@@ -1,0 +1,90 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $navbar;
+    padding: 5px;
+    z-index: 1;
+  }
+
+  .navbar.opaque {
+    background-color: $grey;
+}
+
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    margin-left:  2px;
+  }
+  
+  .navbar-brand img {
+    height: auto;
+    width: 35%;
+  }
+
+  .navbar-toggler{
+  border: 0px;
+ }
+
+ .navbar-toggler:hover{
+  border: 0px;
+  color:$navbar;
+  background-color: $navbar;
+ }
+ 
+
+ .bi-three-dots-vertical{
+  color:$creme;
+ }
+
+  .nav-item {
+    display: inline-block;
+    padding: 10px;
+  }  
+
+  .active{
+    color:$cherry;
+  }
+
+  .nav-link {
+    font-family: $sub-title;
+    text-decoration: none;
+    color: $creme;
+    padding: 3px;
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .nav-link:hover{
+    color:$cherry;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    top: 100%;
+    left: -70px;
+  }
+
+  /*media queries*/
+@media screen and (max-width:767px) {   
+  .navbar-brand img {
+    height: auto;
+    width: 45%;
+  }
+  body {
+    transition: padding-top 0.3s ease-in-out;
+}
+
+body.navbar-expanded {
+    padding-top: 200px;
+}
+}

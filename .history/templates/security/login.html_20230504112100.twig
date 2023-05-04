@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion
+{% endblock %}
+
+{% block body %}
+	{% if app.user %}
+		<h1 class="title">CONNEXION</h1>
+		{{render (controller('App\\Controller\\SecurityController::logiconly'))}}
+
+	{% else %}
+		<h1 class="title">CONNEXION</h1>
+		{{render (controller('App\\Controller\\SecurityController::logiconly'))}}
+	{% endif %}
+
+{% endblock %}

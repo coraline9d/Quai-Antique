@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>Connexion et Inscription</h1>
+
+	<h2>Connexion</h2>
+	{{ form_start(login_form) }}
+	{{ form_widget(login_form) }}
+	<button type="submit">Connexion</button>
+	{{ form_end(login_form) }}
+
+	<h2>Inscription</h2>
+	{{ form_start(registration_form) }}
+	{{ form_widget(registration_form) }}
+	<button type="submit">Inscription</button>
+	{{ form_end(registration_form) }}
+{% endblock %}

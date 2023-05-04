@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation
+{% endblock %}
+
+{% block body %}
+	<h1 class="title-reservation">RÉSERVATION</h1>
+	<div class="container-fluid">
+		<div class="connection-inscription">
+			<div class="row">
+				<div class="col-sm-12 col-md-6">
+					<div class="inscription">
+						<h3 class="name-pre-inscription">PAS ENCORE DE COMPTE ?</h3>
+						<h5 class="sub-name-pre-inscription">Pourquoi s'inscrire :</h5>
+						<div class="desc-insc">
+							<div class="arg-insc">Gagnez du temps</div>
+							lors de vos réservations en créant un compte sur notre site. Vos
+							<div class="arg-insc">données seront pré-remplies</div>
+							et vous pourrez ainsi
+							<div class="arg-insc">profiter pleinement
+							</div>
+							de votre expérience gustative. Devenez un
+							<div class="arg-insc">client chouchouté</div>
+							et laissez-nous
+							<div class="arg-insc">prendre soin de vous</div>.
+						</div>
+						<div class="btn-res">
+							<a href="{{path('app_register')}}" class="btn btn-primary">
+								INSCRIPTION
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-6">
+					<div class="connection">
+						<h3 class="name-pre-connection">DÉJÀ INSCRIT ?</h3>
+						<div class="btn-res">
+							<a href="{{path('app_login')}}" class="btn btn-primary">
+								CONNEXION
+							</a>
+						</div>
+						<div class="whitout-res">
+							<a href="{{path('app_reservation_new')}}">
+								Continuer sans compte
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

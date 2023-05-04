@@ -1,0 +1,92 @@
+.title-reservation {
+    color: $cherry;
+    margin-top: 100px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    margin-bottom: 20px;
+}
+
+.name-pre-inscription{
+  margin-bottom: 2px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 25px;
+}
+
+.sub-name-pre-inscription{
+  margin: 5px;
+  font-weight: bold;
+  text-align: center;
+  color: $cherry;
+}
+
+.name-pre-connection{
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 45px;
+}
+
+.response{
+  display:flex; 
+  justify-content:center; 
+  padding:10px
+}
+
+.desc-insc{
+  margin: 20px;
+  text-align: center;
+  display: block;
+}
+
+.arg-insc{
+  color: $cherry;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.inscription{
+    width: 80%;
+    margin: 7px;
+}
+
+.connection{
+    width: 50%;
+    margin: 7px;
+}
+
+.btn-res{
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.whitout-res{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+  @media (max-width: 1234px) {
+    .inscription{
+      width: 90%;
+      margin: 7px;
+  }
+
+  .response{
+    display:flex; 
+    justify-content:center; 
+    padding:5px
+  }
+
+  .inscription .btn-res{
+    margin-bottom: 30px;
+  }  
+
+  .connection .btn-res{
+    margin-bottom: 15px;
+  }  
+
+  .name-pre-connection{
+    margin-bottom: 25px;
+  }
+  }

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion
+{% endblock %}
+
+{% block body %}
+
+	{% for flash in app.flashes('success') %}
+		<div class="alert alert-success">{{ flash }}</div>
+	{% endfor %}
+	{% if error %}
+		<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+	{% endif %}
+
+	{% if app.user %}
+		<h1 class="title">CONNEXION</h1>
+		<div class="identified">
+			Vous êtes identifié en tant que
+			{{ app.user.userIdentifier }},
+			<a href="{{ path('app_logout') }}">se déconnecter</a>
+		</div>
+	{% else %}
+		<h1 class="title">CONNEXION</h1>
+	{% endif %}
+	<form method="post" class="form">
+		<label for="inputEmail" class="form-label">Email</label>
+		<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+		<label for="inputPassword" class="form-label">Mot de Passe</label>
+		<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+		<a href="{{ path('app_forgot_password_request') }}" class="mdp-forgot">Mot de passe oublié</a>
+		<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+		<button type="submit">
+			SE CONNECTER
+		</button>
+	</form>
+{% endblock %}

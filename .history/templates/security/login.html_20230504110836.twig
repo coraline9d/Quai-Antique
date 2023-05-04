@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion
+{% endblock %}
+
+{% block body %}
+
+	{{render (controller('App\\Controller\\SecurityController::logiconly'))}}
+{% endblock %}

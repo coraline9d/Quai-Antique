@@ -1,0 +1,67 @@
+.title-reservation {
+    color: $cherry;
+    margin-top: 100px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    margin-bottom: 20px;
+}
+
+.name-pre-inscription{
+  margin-bottom: 2px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+}
+
+.name-pre-connection{
+  margin-bottom: 2px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 45px;
+}
+
+.connection-inscription{
+    display: flex;
+    margin: 10px;
+}
+
+.title-insc{
+  margin-top: 0px;
+  font-size: 16px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: $cherry;
+  font-weight: bold;
+  text-align: center;
+}
+
+.desc-insc{
+  margin: 20px;
+  text-align: center;
+  display: block;
+}
+
+.arg-insc{
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: $cherry;
+}
+
+.inscription{
+    width: 50%;
+    margin: 7px;
+}
+
+.connection{
+    width: 50%;
+    margin: 7px;
+}
+@media (min-width: 1235px) {
+    .connection-inscription {
+      column-count: 2;
+    }
+  }
+  
+  @media (max-width: 1234px) {
+    .connection-inscription {
+      column-count: 1;
+    }
+  }

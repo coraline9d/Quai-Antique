@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation
+{% endblock %}
+
+{% block body %}
+	<h1 class="title-reservation">RÉSERVATION</h1>
+
+	<div class="form">
+		{{ form_start(form, {'attr':{'novalidate':'novalidate'}}) }}
+		<div class="form-bloc">
+			<div class="form-group">{{ form_row(form.FirstName, {'label': 'Prénom *'}) }}</div>
+			<div class="form-group">{{ form_row(form.LastName, {'label': 'Nom *'}) }}</div>
+		</div>
+		{{ form_row(form.NumberOfGuest, {'label': 'Email *'}) }}
+		{{ form_row(form.Allergy, {'label': 'Numéro de Téléphone *'}) }}
+		{{ form_row(form.agreeTerms, {'label': 'Conditions Générales *'}) }}
+		<button>{{ button_label|default('RÉSERVER') }}</button>
+		{{ form_end(form) }}
+	</div>
+
+{% endblock %}
