@@ -28,11 +28,20 @@ class ReservationController extends AbstractController
             'manager_registry' => $managerRegistry,
         ]);
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $reservationRepository->save($reservation, true);
 
-            // Ajout d'un message flash de succès
-            $this->addFlash('success', 'Votre réservation a été enregistrée avec succès ! Profitez-en pour préparer votre repas en avance ;)');
+        if ($form->isSubmitted() && $form->isValid()) {
+            try {
+                // Votre code ici
+                $reservationRepository->save($reservation, true);
+
+                // Ajout d'un message flash de succès
+                $this->addFlash('success', 'Votre réservation a été enregistrée avec succès ! Profitez-en pour préparer votre repas en avance ;)');
+            } catch (\Exception $e) {
+                if ($e->getCode() == 500) {
+                    // Ajout d'un message flash d'erreur
+                    $this->addFlash('error', 'Une erreur est survenue lors de l\'enregistrement de votre réservation.');
+                }
+            }
 
             return $this->redirectToRoute('app_card', [], Response::HTTP_SEE_OTHER);
         }

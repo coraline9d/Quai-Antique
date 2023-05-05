@@ -21,13 +21,23 @@ class ReservationController extends AbstractController
     public function new(Request $request, ReservationRepository $reservationRepository, ManagerRegistry $managerRegistry, ScheduleRepository $scheduleRepository): Response
     {
         $reservation = new Reservation();
-        $form = $this->createForm(ReservationType::class, $reservation, [
-            'user' => $this->getUser(),
-            'reservation_repository' => $reservationRepository,
-            'schedule_repository' => $scheduleRepository,
-            'manager_registry' => $managerRegistry,
-        ]);
-        $form->handleRequest($request);
+        try {
+            // Votre code ici
+            $form = $this->createForm(ReservationType::class, $reservation, [
+                'user' => $this->getUser(),
+                'reservation_repository' => $reservationRepository,
+                'schedule_repository' => $scheduleRepository,
+                'manager_registry' => $managerRegistry,
+            ]);
+            $form->handleRequest($request);
+        } catch (\Exception $e) {
+            if ($e->getCode() == 500) {
+                // Ajout d'un message flash d'erreur
+                $this->addFlash('error', 'Veuillez remplir tout les champs pour que votre réservation puisse être prise en compte');
+            }
+        }
+
+
         if ($form->isSubmitted() && $form->isValid()) {
             $reservationRepository->save($reservation, true);
 

@@ -73,6 +73,7 @@ class ReservationType extends AbstractType
                         'message' => 'Veuillez renseigner le nombre de convives s\'il vous plait'
                     ])
                 ],
+                'invalid_message' => 'Veuillez renseigner le nombre de convives s\'il vous plait',
             ])->add('allergy', ChoiceType::class, [
                 'label' => 'Allergie(s) :',
                 'choices' => [

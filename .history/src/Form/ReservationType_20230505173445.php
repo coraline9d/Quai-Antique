@@ -73,6 +73,7 @@ class ReservationType extends AbstractType
                         'message' => 'Veuillez renseigner le nombre de convives s\'il vous plait'
                     ])
                 ],
+                'invalid_message' => 'Veuillez renseigner le nombre de convives s\'il vous plait',
             ])->add('allergy', ChoiceType::class, [
                 'label' => 'Allergie(s) :',
                 'choices' => [
@@ -104,6 +105,7 @@ class ReservationType extends AbstractType
                         'message' => 'Veuillez renseigner une date pour votre repas s\'il vous plait'
                     ])
                 ],
+                'invalid_message' => 'Veuillez renseigner une date pour votre repas s\'il vous plait',
             ])
             ->add('captcha', Recaptcha3Type::class, [
                 'constraints' => new Recaptcha3(),

@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<h1 class="title">PAGE INTROUVABLE</h1>
+	<div>
+		<p class="desc-error">
+			La page que vous souhaitez consulter n'est pas disponible pour le moment.
+		</p>
+		<p class="link-error">
+			En revanche, vous pouvez aller consulter la page de la carte de notre restaurant en appuyant sur ce
+			<a href="{{path('app_card')}}">lien</a>
+		</p>
+	</div>
+{% endblock %}

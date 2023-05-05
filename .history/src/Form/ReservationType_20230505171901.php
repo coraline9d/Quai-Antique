@@ -30,7 +30,6 @@ class ReservationType extends AbstractType
         if ($user) {
             $builder->addEventSubscriber(new UserSubscriber($managerRegistry, $user));
         }
-        $builder->addEventSubscriber(new DateSubscriber($scheduleRepository, $reservationRepository));
 
         $builder
             ->add('firstname', TextType::class, [
@@ -72,7 +71,7 @@ class ReservationType extends AbstractType
                     new NotBlank([
                         'message' => 'Veuillez renseigner le nombre de convives s\'il vous plait'
                     ])
-                ],
+                ]
             ])->add('allergy', ChoiceType::class, [
                 'label' => 'Allergie(s) :',
                 'choices' => [
@@ -109,6 +108,7 @@ class ReservationType extends AbstractType
                 'constraints' => new Recaptcha3(),
                 'action_name' => 'Inscription',
             ]);
+        $builder->addEventSubscriber(new DateSubscriber($scheduleRepository, $reservationRepository));
     }
 
     public function configureOptions(OptionsResolver $resolver): void

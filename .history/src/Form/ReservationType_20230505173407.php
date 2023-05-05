@@ -73,6 +73,7 @@ class ReservationType extends AbstractType
                         'message' => 'Veuillez renseigner le nombre de convives s\'il vous plait'
                     ])
                 ],
+                'invalid_message' => 'L\'heure de rendez-vous doit être entre 08:00 et 17:00',
             ])->add('allergy', ChoiceType::class, [
                 'label' => 'Allergie(s) :',
                 'choices' => [

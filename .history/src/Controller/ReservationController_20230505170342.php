@@ -28,6 +28,17 @@ class ReservationController extends AbstractController
             'manager_registry' => $managerRegistry,
         ]);
         $form->handleRequest($request);
+        // Ajout d'un écouteur d'événement PRE_SUBMIT
+        $form->addEventListener(FormEvents::PRE_SUBMIT, function (FormEvent $event) {
+            $data = $event->getData();
+            $form = $event->getForm();
+
+            // Vérification si les champs numberOfGuests et date sont vides
+            if (empty($data['numberOfGuests']) || empty($data['date'])) {
+                // Ajout d'un message flash d'erreur
+                $this->addFlash('error', 'Veuillez remplir tous les champs pour que votre réservation puisse être prise en compte s\'il vous plait');
+            }
+        });
         if ($form->isSubmitted() && $form->isValid()) {
             $reservationRepository->save($reservation, true);
 

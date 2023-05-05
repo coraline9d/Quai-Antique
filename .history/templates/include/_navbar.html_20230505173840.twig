@@ -50,12 +50,15 @@
 					</li>
 				{% elseif app.user and app.user.roles is defined and 'ROLE_ADMIN' in app.user.roles %}
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle {{ app.request.get('_route') == 'app_admin' ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<a class="nav-link dropdown-toggle {{ app.request.get('_route') in ['app_utilisateur_profile', 'app_utilisateur_password'] ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							ADMINISTRATION
 						</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a class="dropdown-item {{ app.request.get('_route') == 'app_admin' ? 'active' : '' }}" href="{{ path('app_admin') }}">Espace Administrateur</a>
+								<a class="dropdown-item {{ app.request.get('_route') == 'app_utilisateur_profile' ? 'active' : '' }}" href="{{path('app_utilisateur_profile')}}">Modifier mon profil</a>
+							</li>
+							<li>
+								<a class="dropdown-item {{ app.request.get('_route') == 'app_utilisateur_password' ? 'active' : '' }}" href="{{path('app_utilisateur_password')}}">Changer mon mot de passe</a>
 							</li>
 							<li><hr class="dropdown-divider"></li>
 							<li>
@@ -63,6 +66,7 @@
 							</li>
 						</ul>
 					</li>
+					<a class="nav-link {{ app.request.get('_route') == 'app_admin' ? 'active' : '' }}" href="{{ path('app_admin') }}">ADMINISTRATION</a>
 				{% else %}
 					<li class="nav-item">
 						<a class="nav-link {{ app.request.get('_route') == 'app_register' ? 'active' : '' }}" href="{{path('app_register')}}">INSCRIPTION</a>

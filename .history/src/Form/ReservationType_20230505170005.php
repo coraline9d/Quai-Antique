@@ -70,9 +70,9 @@ class ReservationType extends AbstractType
                         'message' => 'Nous ne pouvons pas accueillir plus de 30 personnes'
                     ]),
                     new NotBlank([
-                        'message' => 'Veuillez renseigner le nombre de convives s\'il vous plait'
+                        'message' => 'Veuillez entrer le nombre de convives s\'il vous plait'
                     ])
-                ],
+                ]
             ])->add('allergy', ChoiceType::class, [
                 'label' => 'Allergie(s) :',
                 'choices' => [

@@ -50,7 +50,7 @@
 					</li>
 				{% elseif app.user and app.user.roles is defined and 'ROLE_ADMIN' in app.user.roles %}
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle {{ app.request.get('_route') == 'app_admin' ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<a class="nav-link dropdown-toggle {{ app.request.get('_route') in ['app_utilisateur_profile', 'app_utilisateur_password'] ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							ADMINISTRATION
 						</a>
 						<ul class="dropdown-menu">

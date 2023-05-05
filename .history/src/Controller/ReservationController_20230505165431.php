@@ -28,14 +28,24 @@ class ReservationController extends AbstractController
             'manager_registry' => $managerRegistry,
         ]);
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $reservationRepository->save($reservation, true);
 
-            // Ajout d'un message flash de succès
-            $this->addFlash('success', 'Votre réservation a été enregistrée avec succès ! Profitez-en pour préparer votre repas en avance ;)');
+        try {
+            // Votre code ici
+            if ($form->isSubmitted() && $form->isValid()) {
+                $reservationRepository->save($reservation, true);
 
-            return $this->redirectToRoute('app_card', [], Response::HTTP_SEE_OTHER);
+                // Ajout d'un message flash de succès
+                $this->addFlash('success', 'Votre réservation a été enregistrée avec succès ! Profitez-en pour préparer votre repas en avance ;)');
+
+                return $this->redirectToRoute('app_card', [], Response::HTTP_SEE_OTHER);
+            }
+        } catch (\Exception $e) {
+            if ($e->getCode() == 500) {
+                // Ajout d'un message flash d'erreur
+                $this->addFlash('error', 'Veuillez remplir tout les champs pour que votre réservation puisse être prise en compte');
+            }
         }
+
 
         return $this->render('reservation/new.html.twig', [
             'reservation' => $reservation,

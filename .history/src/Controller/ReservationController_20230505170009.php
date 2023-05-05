@@ -35,6 +35,9 @@ class ReservationController extends AbstractController
             $this->addFlash('success', 'Votre réservation a été enregistrée avec succès ! Profitez-en pour préparer votre repas en avance ;)');
 
             return $this->redirectToRoute('app_card', [], Response::HTTP_SEE_OTHER);
+        } else {
+            // Ajout d'un message flash d'erreur
+            $this->addFlash('error', 'Veuillez remplir tous les champs pour que votre réservation puisse être prise en compte s\'il vous plait');
         }
 
         return $this->render('reservation/new.html.twig', [

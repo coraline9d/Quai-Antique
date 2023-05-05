@@ -22,15 +22,7 @@ class ReservationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $user = $options['user'];
-        $scheduleRepository = $options['schedule_repository'];
-        $reservationRepository = $options['reservation_repository'];
-        $managerRegistry = $options['manager_registry'];
 
-        if ($user) {
-            $builder->addEventSubscriber(new UserSubscriber($managerRegistry, $user));
-        }
-        $builder->addEventSubscriber(new DateSubscriber($scheduleRepository, $reservationRepository));
 
         $builder
             ->add('firstname', TextType::class, [
@@ -70,9 +62,9 @@ class ReservationType extends AbstractType
                         'message' => 'Nous ne pouvons pas accueillir plus de 30 personnes'
                     ]),
                     new NotBlank([
-                        'message' => 'Veuillez renseigner le nombre de convives s\'il vous plait'
+                        'message' => 'Veuillez entrer le nombre de convives s\'il vous plait'
                     ])
-                ],
+                ]
             ])->add('allergy', ChoiceType::class, [
                 'label' => 'Allergie(s) :',
                 'choices' => [
@@ -109,6 +101,15 @@ class ReservationType extends AbstractType
                 'constraints' => new Recaptcha3(),
                 'action_name' => 'Inscription',
             ]);
+        $user = $options['user'];
+        $scheduleRepository = $options['schedule_repository'];
+        $reservationRepository = $options['reservation_repository'];
+        $managerRegistry = $options['manager_registry'];
+
+        if ($user) {
+            $builder->addEventSubscriber(new UserSubscriber($managerRegistry, $user));
+        }
+        $builder->addEventSubscriber(new DateSubscriber($scheduleRepository, $reservationRepository));
     }
 
     public function configureOptions(OptionsResolver $resolver): void
