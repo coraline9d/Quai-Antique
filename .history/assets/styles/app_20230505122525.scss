@@ -7,8 +7,6 @@
 @import './menu.scss';
 @import './form.scss';
 @import './pre_reservation.scss';
-@import './cookie.scss';
-
 body{
     background-color: $creme;
     color: $grey;
@@ -46,4 +44,26 @@ div {
 
 .flash{
     text-align: center;
+}
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.cookie-banner button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }

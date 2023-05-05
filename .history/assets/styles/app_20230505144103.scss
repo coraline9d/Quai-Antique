@@ -7,8 +7,6 @@
 @import './menu.scss';
 @import './form.scss';
 @import './pre_reservation.scss';
-@import './cookie.scss';
-
 body{
     background-color: $creme;
     color: $grey;
@@ -46,4 +44,50 @@ div {
 
 .flash{
     text-align: center;
+}
+
+
+//cookie
+#cookie-banner {
+    position: fixed;
+    display: none;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $navbar;
+    color: $creme;
+    padding: 7px;
+    padding-bottom: 0;
+  }
+
+  .des-cookie{
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .btn-cookie{
+    text-align: center;
+  }
+
+#accept-cookies {
+    padding: 5px 15px;
+    background-color: rgb(12, 101, 12);
+    margin: 0;
+    margin-top: 2px;
+}
+
+#accept-cookies:hover {
+color: $creme;
+}
+
+#refuse-cookies:hover {
+    color: $creme;
+    }
+
+#refuse-cookies {
+    padding: 5px 15px;
+    background-color: rgb(148, 25, 25);
+    margin: 0;
+    margin-top: 2px;
 }

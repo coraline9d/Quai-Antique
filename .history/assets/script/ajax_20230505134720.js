@@ -51,3 +51,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Ajoutez un écouteur d'événements pour détecter les changements de valeur du champ "Date"
   dateField.addEventListener("change", updateHours);
 });
+
+//Methode pour les cookies

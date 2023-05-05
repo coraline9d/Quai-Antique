@@ -18,15 +18,11 @@
 	<body>
 		{% include "include/_navbar.html.twig" %}
 		{% block body %}{% endblock %}
-		{{render (controller('App\\Controller\\ScheduleController::schedule'))}}
-		<div id="cookie-banner">
-			<div class="des-cookie">
-				Ce site utilise des cookies pour vous garantir une meilleure expérience utilisateur :
-				<div class="btn-cookie">
-					<button id="refuse-cookies">Refuser</button>
-					<button id="accept-cookies">Accepter</button>
-				</div>
-			</div>
+		<div class="cookie-banner">
+			<p>Ce site utilise des cookies pour améliorer votre expérience utilisateur</p>
+			<button class="accept-cookies">Accepter</button>
+			<button class="decline-cookies">Refuser</button>
 		</div>
+		{{render (controller('App\\Controller\\ScheduleController::schedule'))}}
 	</body>
 </html>

@@ -17,16 +17,13 @@
 	</head>
 	<body>
 		{% include "include/_navbar.html.twig" %}
-		{% block body %}{% endblock %}
-		{{render (controller('App\\Controller\\ScheduleController::schedule'))}}
-		<div id="cookie-banner">
-			<div class="des-cookie">
-				Ce site utilise des cookies pour vous garantir une meilleure expérience utilisateur :
-				<div class="btn-cookie">
-					<button id="refuse-cookies">Refuser</button>
-					<button id="accept-cookies">Accepter</button>
-				</div>
+		{% block body %}
+			<div class="cookie-banner">
+				<p>This website uses cookies to ensure you get the best experience on our website.</p>
+				<button class="accept-cookies">Accept</button>
+				<button class="decline-cookies">Decline</button>
 			</div>
-		</div>
+		{% endblock %}
+		{{render (controller('App\\Controller\\ScheduleController::schedule'))}}
 	</body>
 </html>

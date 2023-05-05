@@ -49,7 +49,7 @@
 						</ul>
 					</li>
 				{% elseif app.user and app.user.roles is defined and 'ROLE_ADMIN' in app.user.roles %}
-					<a class="nav-link {{ app.request.get('_route') == 'app_admin' ? 'active' : '' }}" href="{{ path('app_admin') }}">ADMINISTRATION</a>
+					<a class="nav-link {{ app.request.get('_route') == 'app_admin' ? 'active' : '' }}" href="{{ path('app_admin') }}">ESPACE ADMINISTRATEUR</a>
 				{% else %}
 					<li class="nav-item">
 						<a class="nav-link {{ app.request.get('_route') == 'app_register' ? 'active' : '' }}" href="{{path('app_register')}}">INSCRIPTION</a>

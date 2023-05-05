@@ -30,7 +30,11 @@
 						<a class="nav-link {{ app.request.get('_route') in ['app_reservation_new', 'app_pre_reservation'] ? 'active' : '' }}" href="{{ path('app_pre_reservation') }}">RÉSERVATION</a>
 					{% endif %}
 				</li>
-				{% if app.user and app.user.roles is defined and 'ROLE_USER' in app.user.roles and 'ROLE_ADMIN' not in app.user.roles%}
+				{% if app.user and app.user.roles is defined and 'ROLE_ADMIN' in app.user.roles %}
+					{# Code à exécuter si l'utilisateur est un administrateur #}
+					<li>Contenu pour les administrateurs</li>
+				{% endif %}
+				{% if app.user%}
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle {{ app.request.get('_route') in ['app_utilisateur_profile', 'app_utilisateur_password'] ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							MON COMPTE
@@ -48,8 +52,6 @@
 							</li>
 						</ul>
 					</li>
-				{% elseif app.user and app.user.roles is defined and 'ROLE_ADMIN' in app.user.roles %}
-					<a class="nav-link {{ app.request.get('_route') == 'app_admin' ? 'active' : '' }}" href="{{ path('app_admin') }}">ADMINISTRATION</a>
 				{% else %}
 					<li class="nav-item">
 						<a class="nav-link {{ app.request.get('_route') == 'app_register' ? 'active' : '' }}" href="{{path('app_register')}}">INSCRIPTION</a>

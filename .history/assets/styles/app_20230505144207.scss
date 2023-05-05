@@ -1,0 +1,97 @@
+@import './custom.scss';
+@import './variables.scss';
+@import './navbar.scss';
+@import './footer.scss';
+@import './home.scss';
+@import './card.scss';
+@import './menu.scss';
+@import './form.scss';
+@import './pre_reservation.scss';
+body{
+    background-color: $creme;
+    color: $grey;
+    font-size: 15px;
+    margin: 0px;
+    padding: 0px;
+}
+
+//polices
+h1, h2, h3{
+    font-family: $title;
+    font-weight: bold;
+}
+
+h4, h5, h6{
+    font-family: $sub-title;
+}
+
+div {
+    font-family: $text;
+}
+
+//boutons
+.btn{
+    border-radius: 0px;
+  }
+
+.btn:hover{
+    background-color: $creme;
+    color:$cherry;
+    border-radius: 3px;
+  }
+
+//message
+
+.flash{
+    text-align: center;
+}
+
+
+//cookie
+#cookie-banner {
+    position: fixed;
+    display: none;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $navbar;
+    color: $creme;
+    padding: 7px;
+    padding-bottom: 0;
+  }
+
+  .des-cookie{
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .btn-cookie{
+    text-align: center;
+  }
+
+#accept-cookies {
+    padding: 5px 15px;
+    background-color: rgb(12, 101, 12);
+    margin: 0;
+    margin-top: 2px;
+}
+
+#refuse-cookies {
+    padding: 5px 15px;
+    background-color: rgb(148, 25, 25);
+    margin: 0;
+    margin-top: 2px;
+}
+
+#accept-cookies:hover {
+color: $creme;
+background-color: rgba(12, 101, 12,0.2);
+}
+
+#refuse-cookies:hover {
+color: $creme;
+background-color: rgba(148, 25, 25, 0.2);
+}
+
+

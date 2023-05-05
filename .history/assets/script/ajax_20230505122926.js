@@ -51,3 +51,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // Ajoutez un écouteur d'événements pour détecter les changements de valeur du champ "Date"
   dateField.addEventListener("change", updateHours);
 });
+
+//Methode pour les cookies
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".accept-cookies").addEventListener("click", () => {
+    fetch("/path/to/controller/action", {
+      method: "POST",
+    }).then(() => {
+      // Hide the cookie banner
+      document.querySelector(".cookie-banner").style.display = "none";
+    });
+  });
+
+  document.querySelector(".decline-cookies").addEventListener("click", () => {
+    // Hide the cookie banner
+    document.querySelector(".cookie-banner").style.display = "none";
+  });
+});

@@ -51,3 +51,35 @@ document.addEventListener("DOMContentLoaded", () => {
   // Ajoutez un écouteur d'événements pour détecter les changements de valeur du champ "Date"
   dateField.addEventListener("change", updateHours);
 });
+
+//Methode pour les cookies
+document.addEventListener("DOMContentLoaded", () => {
+  const timestamp = getCookie("timestamp");
+  if (timestamp && Date.now() - timestamp > 24 * 60 * 60 * 1000) {
+    // Show the cookie banner
+    document.querySelector(".cookie-banner").style.display = "block";
+  } else {
+    // Hide the cookie banner
+    document.querySelector(".cookie-banner").style.display = "none";
+  }
+
+  document.querySelector(".accept-cookies").addEventListener("click", () => {
+    fetch("/path/to/controller/action", {
+      method: "POST",
+    }).then(() => {
+      // Hide the cookie banner
+      document.querySelector(".cookie-banner").style.display = "none";
+    });
+  });
+
+  document.querySelector(".decline-cookies").addEventListener("click", () => {
+    // Hide the cookie banner
+    document.querySelector(".cookie-banner").style.display = "none";
+  });
+});
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+}

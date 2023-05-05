@@ -13,7 +13,6 @@ import "bootstrap";
 
 require("./jquery.min.js");
 require("./ajax.js");
-require("./cookie.js");
 
 import { Tooltip, Toast, Popover } from "bootstrap";
 
@@ -23,3 +22,14 @@ document
     document.querySelector(".navbar").classList.toggle("opaque");
     document.querySelector("body").classList.toggle("navbar-expanded");
   });
+
+window.onload = function () {
+  if (!localStorage.getItem("cookieconsent")) {
+    var consent = confirm(
+      "Ce site utilise des cookies pour améliorer votre expérience. En continuant à utiliser ce site, vous acceptez notre utilisation des cookies."
+    );
+    if (consent) {
+      localStorage.setItem("cookieconsent", true);
+    }
+  }
+};

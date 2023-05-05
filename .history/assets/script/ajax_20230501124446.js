@@ -1,5 +1,3 @@
-//Méthode pour la date et la capcité de personnes formulaire de réservation
-
 document.addEventListener("DOMContentLoaded", () => {
   // Votre code JavaScript existant ici
 
