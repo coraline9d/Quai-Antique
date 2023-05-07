@@ -32,6 +32,9 @@ class RegistrationController extends AbstractController
                 )
             );
 
+            $this->addFlash('success', 'Votre inscription a bien été enregistrée. Vous êtes connecté, et pouvez maintenant resérver en toute tranquilité ;)');
+
+
             $entityManager->persist($user);
             $entityManager->flush();
 

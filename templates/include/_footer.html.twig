@@ -12,7 +12,11 @@
 				<a href="{{path('app_menu')}}">MENU</a>
 			</div>
 			<div>
-				<a href="{{path('app_reservation_new')}}">RÉSERVATION</a>
+				{% if app.user %}
+					<a href="{{path('app_reservation_new')}}">RÉSERVATION</a>
+				{% else %}
+					<a href="{{path('app_pre_reservation')}}">RÉSERVATION</a>
+				{% endif %}
 			</div>
 			<div>
 				{% if app.user and app.user.roles is defined and 'ROLE_USER' in app.user.roles and 'ROLE_ADMIN' not in app.user.roles%}
@@ -53,7 +57,11 @@
 			<div>11 rue du Quai - 75016 Paris</div>
 			<div>Tél : +33 (0)1 23 45 67 89</div>
 			<div>
-				<a href="{{path('app_pre_reservation')}}" class="btn btn-primary btn-lg book">Réserver</a>
+				{% if app.user %}
+					<a href="{{path('app_reservation_new')}}" class="btn btn-primary btn-lg book">Réserver</a>
+				{% else %}
+					<a href="{{path('app_pre_reservation')}}" class="btn btn-primary btn-lg book">Réserver</a>
+				{% endif %}
 			</div>
 			<div>Restaurant Gastronomique - Depuis 2001</div>
 		</div>

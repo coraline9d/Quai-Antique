@@ -12,6 +12,12 @@
 		</div>
 	{% endfor %}
 
+	{% for message in app.flashes('success') %}
+		<div class="alert alert-success mt-4 flash">
+			{{ message }}
+		</div>
+	{% endfor %}
+
 	<div class="form">
 		{{ form_start(form, {'attr':{'novalidate':'novalidate'}}) }}
 		<div class="form-bloc">
