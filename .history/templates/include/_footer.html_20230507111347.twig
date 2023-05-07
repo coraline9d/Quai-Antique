@@ -1,0 +1,69 @@
+<footer>
+	<div class="container">
+		<div class="column">
+			<h3>Rubriques</h3>
+			<div>
+				<a href="{{path('app_home')}}">ACCUEIL</a>
+			</div>
+			<div>
+				<a href="{{path('app_card')}}">CARTE</a>
+			</div>
+			<div>
+				<a href="{{path('app_menu')}}">MENU</a>
+			</div>
+			<div>
+				{% if app.user %}
+					<a href="{{path('app_reservation_new')}}">RÉSERVATION</a>
+				{% else %}
+					<a href="{{path('app_pre_reservation')}}">RÉSERVATION</a>
+				{% endif %}
+
+			</div>
+			<div>
+				{% if app.user and app.user.roles is defined and 'ROLE_USER' in app.user.roles and 'ROLE_ADMIN' not in app.user.roles%}
+					<a href="{{path('app_utilisateur_profile')}}">MON COMPTE</a>
+				{% elseif app.user and app.user.roles is defined and 'ROLE_ADMIN' in app.user.roles %}
+					<a href="{{path('app_admin')}}">ADMINISTRATION</a>
+				{% else %}
+					<div>
+						<a href="{{path('app_register')}}">INSCRIPTION</a>
+					</div>
+
+					<a href="{{path('app_login')}}">CONNEXION</a>
+				{% endif %}
+			</div>
+
+		</div>
+		<div class="column">
+			<h3>Horaires d'ouverture</h3>
+			<div>
+				{% for schedule in schedules %}
+					<div class="day-schedule">
+						<span class="day">
+							{{schedule.day}}
+						</span>
+						<span>
+							{{schedule.OpeningHour}}:00 -
+							{{schedule.BeginningBreakHour}}:00    /
+							{{schedule.EndingBreakHour}}:00 -
+							{{schedule.ClosingHour}}:00
+						</span>
+
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="column">
+			<h3>Notre Adresse</h3>
+			<div>11 rue du Quai - 75016 Paris</div>
+			<div>Tél : +33 (0)1 23 45 67 89</div>
+			<div>
+				<a href="{{path('app_pre_reservation')}}" class="btn btn-primary btn-lg book">Réserver</a>
+			</div>
+			<div>Restaurant Gastronomique - Depuis 2001</div>
+		</div>
+	</div>
+	<div class="copyright">
+		Copyright © 2023 Restaurant Paris - QUAI ANTIQUE. Website by Coraline.
+	</div>
+</footer>

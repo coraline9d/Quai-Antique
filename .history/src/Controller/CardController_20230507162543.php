@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CardController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
+    #[Route('/accueil', name: 'app_home')]
     public function home(ManagerRegistry $managerRegistry): Response
     {
         $card = $managerRegistry->getRepository(Card::class);
