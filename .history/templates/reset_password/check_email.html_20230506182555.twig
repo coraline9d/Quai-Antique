@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mot de passe oublié
+{% endblock %}
+
+{% block body %}
+	<h1 class="title">MOT DE PASSE OUBLIÉ</h1>
+	<div class="form">
+		<div>
+			Un e-mail vous a été envoyé sur votre boite mail, le lien de résiliation de votre mot de divasse exdivira dans
+			{{ resetToken.exdivirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+		</div>
+		<div>Si vous ne recevez pas notre e-mail, veuillez regarder dans vos spams ou bien appuyer sur ce
+			<a href="{{ path('app_forgot_password_request') }}">lien</a>
+		</div>
+		<div>Si le problème persite, veuillez nous contacter.</div>
+	</div>
+
+{% endblock %}
