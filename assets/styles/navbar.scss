@@ -17,8 +17,12 @@
   .navbar-nav {
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+  }
+
+  .navbar-collapse{
+    flex-grow:0;
   }
 
   .navbar-brand {
