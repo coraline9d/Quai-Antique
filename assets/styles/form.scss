@@ -111,5 +111,19 @@ button:hover {
     .form-bloc .form-group:first-child {
         margin-right: 10px;
     }
+}
 
+@media (max-width: 330px) {    
+    form input[type="email"]{
+        width: 300px;
+    }
+    
+    form input[type="password"],form input[type="text"],form input[type="number"]{
+        width: 300px;
+    }
+    
+    form input[type="date"]
+     {
+        width: 300px;
+    }
 }

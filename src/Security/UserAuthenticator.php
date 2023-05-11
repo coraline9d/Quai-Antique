@@ -47,7 +47,17 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse($this->urlGenerator->generate('app_reservation_new'));
+        // Get the user from the token
+        $user = $token->getUser();
+
+        // Check if the user is an admin
+        if (in_array('ROLE_ADMIN', $user->getRoles())) {
+            // Redirect to the admin page
+            return new RedirectResponse($this->urlGenerator->generate('app_admin'));
+        } else {
+            // Redirect to the profile page
+            return new RedirectResponse($this->urlGenerator->generate('app_reservation_new'));
+        }
     }
 
     protected function getLoginUrl(Request $request): string

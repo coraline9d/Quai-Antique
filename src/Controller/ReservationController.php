@@ -56,4 +56,10 @@ class ReservationController extends AbstractController
         // Renvoyez les heures disponibles au format JSON
         return new JsonResponse($availableHours);
     }
+
+    #[Route('/pre', name: 'app_pre_reservation')]
+    public function reservation(): Response
+    {
+        return $this->render('reservation/pre_reservation.html.twig', []);
+    }
 }

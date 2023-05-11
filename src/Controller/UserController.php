@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Form\UserType;
 use App\Form\UserPasswordType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -99,4 +100,29 @@ class UserController extends AbstractController
             'form' => $form,
         ]);
     }
+
+    // #[Route('/user', name: 'app_user')]
+    // public function index(EntityManagerInterface $entityManager)
+    // {
+    //     $user = new User();
+
+    //     $plainPassword = '';
+    //     $hashedPassword = password_hash($plainPassword, PASSWORD_BCRYPT);
+
+    //     $user
+    //         ->setEmail('')
+    //         ->setPassword($hashedPassword)
+    //         ->setRoles(["ROLE_ADMIN"])
+    //         ->setFirstName('')
+    //         ->setLastName('')
+    //         ->setPhone('+');
+
+
+    //     $entityManager->persist($user);
+    //     $entityManager->flush();
+
+    //     return $this->render('user/index.html.twig', [
+    //         'controller_name' => 'UserController',
+    //     ]);
+    // }
 }

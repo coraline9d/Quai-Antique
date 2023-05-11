@@ -32,10 +32,12 @@
   .navbar-brand img {
     height: auto;
     width: 35%;
+    float: left;
   }
 
   .navbar-toggler{
   border: 0px;
+  margin-top: 10px;
  }
 
  .navbar-toggler:hover{

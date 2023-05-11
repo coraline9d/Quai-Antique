@@ -49,10 +49,4 @@ class RegistrationController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
-
-    #[Route('/pre-reservation', name: 'app_pre_reservation')]
-    public function reservation(): Response
-    {
-        return $this->render('reservation/pre_reservation.html.twig', []);
-    }
 }
