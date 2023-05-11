@@ -62,6 +62,7 @@
 
   .nav-link {
     font-family: $sub-title;
+    font-size: 1.75vh;
     text-decoration: none;
     color: $creme;
     padding: 3px;
@@ -80,12 +81,18 @@
     left: -70px;
   }
 
+  svg.bi.bi-three-dots-vertical {
+    width: 14px;
+    height: 14px;
+    fill: currentcolor;
+    }
+  
+    svg{
+      vertical-align: auto;
+    }
+
   /*media queries*/
 @media screen and (max-width:767px) {   
-  .navbar-brand img {
-    height: auto;
-    width: 45%;
-  }
   body {
     transition: padding-top 0.3s ease-in-out;
 }
@@ -93,4 +100,14 @@
 body.navbar-expanded {
     padding-top: 200px;
 }
+
+.nav-link {
+  font-size: 2vh;
 }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar-brand img {
+    width: 30%;
+  }
+ }

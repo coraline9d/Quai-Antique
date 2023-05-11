@@ -54,16 +54,16 @@
 		</div>
 		<div class="column">
 			<h3>Notre Adresse</h3>
-			<div>11 rue du Quai - 75016 Paris</div>
-			<div>Tél : +33 (0)1 23 45 67 89</div>
-			<div>
+			<div class="address">11 rue du Quai - 75016 Paris</div>
+			<div class="address">Tél : +33 (0)1 23 45 67 89</div>
+			<div class="address">
 				{% if app.user %}
 					<a href="{{path('app_reservation_new')}}" class="btn btn-primary btn-lg book">Réserver</a>
 				{% else %}
 					<a href="{{path('app_pre_reservation')}}" class="btn btn-primary btn-lg book">Réserver</a>
 				{% endif %}
 			</div>
-			<div>Restaurant Gastronomique - Depuis 2001</div>
+			<div class="address">Restaurant Gastronomique - Depuis 2001</div>
 		</div>
 	</div>
 	<div class="copyright">

@@ -15,10 +15,12 @@ header img {
 }
   
 .cover-text h1 {
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
+    font-size: 4.5vh;
 }
 
 .cover-text .btn{
+    font-size: 2.75vh;
     border-radius: 7px;
     padding: 10px;
     padding-left: 15px;
@@ -59,6 +61,10 @@ header img {
     padding-top: 7px;
     font-size: 13px;
     padding-bottom: 5px;
+}
+
+.card-body{
+    overflow: hidden;
 }
 
 .card-body .btn {
@@ -137,7 +143,6 @@ header img {
 }
 
 .cover-text .btn {
-    font-size: 18px;
     padding: 7px;
     padding-left: 12px;
     padding-right: 12px;
@@ -153,7 +158,6 @@ header img {
 }
 
 .cover-text {
-    font-size: 14px;
     white-space: normal;
     width: 300px;
     margin-top: 140px;
@@ -170,3 +174,9 @@ header img {
     height: 200px;
 }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .card {
+    margin-bottom: 20px;
+    }
+   }

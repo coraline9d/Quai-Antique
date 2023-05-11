@@ -34,25 +34,19 @@ npm install
 npm run build
 ```
 
-7. Installez EasyAdmin avec Composer :
-
-```bash
-composer require easycorp/easyadmin-bundle
-```
-
-8. Installez les assets d’EasyAdmin :
+7. Installez les assets d’EasyAdmin :
 
 ```bash
 php bin/console assets:install --symlink public
 ```
 
-9. Démarrez le serveur local avec Symfony CLI :
+8. Démarrez le serveur local avec Symfony CLI :
 
 ```bash
 symfony serve -d
 ```
 
-10. Pour déployer le site complètement en local, vous aurez besoin d’un serveur local tel que MAMP, XAMPP ou WAMP. Démarrez ce serveur pour accéder au site sur votre machine.
+9. Pour déployer le site complètement en local, vous aurez besoin d’un serveur local tel que MAMP, XAMPP ou WAMP. Démarrez ce serveur pour accéder au site sur votre machine.
 
 ## Création Administrateur
 
