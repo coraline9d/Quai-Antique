@@ -101,7 +101,7 @@ class UserController extends AbstractController
         ]);
     }
 
-    // #[Route('/user', name: 'app_user')]
+    // #[Route('/administrateur']
     // public function index(EntityManagerInterface $entityManager)
     // {
     //     $user = new User();
