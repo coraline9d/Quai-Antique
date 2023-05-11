@@ -1,6 +1,6 @@
 # Bienvenue sur le Quai Antique - Paris XVI
 
-Le Quai Antique est un restaurant ayant pour adresse fictive le 11 rue du Quai - 75016 Paris
+Le Quai Antique est un restaurant gastronomique, ayant pour adresse fictive le 11 rue du Quai - 75016 Paris
 
 ## Installation Locale
 
@@ -24,9 +24,9 @@ composer install
 npm install
 ```
 
-4. La base de données se trouve dans le fichier `bash .env.local `, vous n’avez donc pas besoin de la créer.
+4. La base de données se trouve dans le fichier `.env.local`, vous n’avez donc pas besoin de la créer.
 
-5. Pour configurer le serveur SMTP, remplissez vos identifiants et mot de passe (par exemple, ceux de Mailtrap) dans le fichier `bash .env.local.  ` .
+5. Pour configurer le serveur SMTP, remplissez vos identifiants et mot de passe (par exemple, ceux de Mailtrap) dans le fichier `.env.local` .
 
 6. Utilisant Webpack Encore, il faut construire les assets avec npm :
 
@@ -58,14 +58,14 @@ symfony serve -d
 
 Pour créer un compte administrateur, suivez les étapes ci-dessous :
 
-1. Ouvrez le fichier `bash src/Controller/UserController ` et décommentez la route `bash /administrateur` ainsi que la fonction associée.
+1. Ouvrez le fichier `src/Controller/UserController ` et décommentez la route `/administrateur` ainsi que la fonction associée.
 
 2. Remplissez vos informations :
-   **Attention :**
+   **Attention à certaines restrictions**
 
    - Mot de passe : 14 caractères contenant des chiffres, des majuscules, des minuscules et des caractères spéciaux
    - Numéro de téléphone : format +33625122512
 
-3. Accédez à l’URL `bash https://127.0.0.1:8001/administrateur` pour créer votre compte.
+3. Accédez à l’URL https://127.0.0.1:8000/administrateur pour créer votre compte.
 
-4. Vous pouvez maintenant vous connecter à l’URL `bashhttps://127.0.0.1:8001/connexion` et expérimenter votre expérience en tant qu’administrateur.
+4. Vous pouvez maintenant vous connecter à l’URL https://127.0.0.1:8000/connexion et expérimenter votre expérience en tant qu’administrateur.
