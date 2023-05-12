@@ -1,5 +1,5 @@
 .food-card{
-    padding: 30px; 
+     padding: 30px; 
 }
 
 .details-card{
@@ -37,27 +37,27 @@
 .desc-card {
     color:$cherry;
     font-size: 12px;
-    max-height: 100px; /* Limite la hauteur du contenu des plats */
-    overflow-y: auto; /* Ajoute un défilement si nécessaire */
+    max-height: 100px; /* Limit the height of the contents of the dishes */
+    overflow-y: auto; /* Add scroll if needed */
 }
 
- //for the desktop
+//for the desktop
 @media (min-width: 1025px) {
     .food-card {
       column-count: 3;
     }
   }
   
-  //for the tablet
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .food-card {
-      column-count: 2;
-    }
+//for the tablet
+@media (min-width: 768px) and (max-width: 1024px) {
+  .food-card {
+    column-count: 2;
   }
+}
   
- //for the phone
-  @media (max-width: 767px) {
-    .food-card {
-      column-count: 1;
-    }
+//for the phone
+@media (max-width: 767px) {
+  .food-card {
+    column-count: 1;
   }
+}

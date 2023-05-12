@@ -1,21 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ScheduleController!
+{% block title %}Création
 {% endblock %}
 
 {% block body %}
-	{% for schedule in schedules %}
-		{{schedule.day}}
-		:
-		{{schedule.OpeningHour}}:00 -
-		{{schedule.BeginningBreakHour}}:00    /
-		{{schedule.EndingBreakHour}}:00 -
-		{{schedule.ClosingHour}}:00
-	{% endfor %}
-
-	{% for message in app.flashes('success') %}
-		<div class="alert alert-success mt-4">
-			{{message}}
-		</div>
-	{% endfor %}
+	<h1 class="title">CRÉATION RÉUSSIE</h1>
+	<div>
+		<p class="desc-error">
+			Bienvenue chez le Quai Antique
+		</p>
+		<p class="link-error">
+			Vous pouvez désormais aller vous balader sur notre site, en cliquant sur ce
+			<a href="{{path('app_card')}}">lien</a>
+			par exemple.
+		</p>
+	</div>
 {% endblock %}

@@ -80,10 +80,10 @@
     .food-menu {
       column-count: 2;
     }
-  }
+}
   
-  //for the normal deskotp and the rest
-  @media (max-width: 1234px) {
+//for the normal deskotp and the rest
+@media (max-width: 1234px) {
     .food-menu {
       column-count: 1;
     }
@@ -95,5 +95,5 @@
     .formula:last-child{
       margin-bottom: 30px;
     }
-  }
+}
   

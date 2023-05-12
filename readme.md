@@ -2,14 +2,14 @@
 
 Le Quai Antique est un restaurant gastronomique, ayant pour adresse fictive le 11 rue du Quai - 75016 Paris
 
-## Spécification Techniques
+## Spécifications Techniques
 
 **Technologie**
 
 - PHP >= 8
 - Composer >= 2
 - Framework : Symfony
-- Base de donnée : Mysql 5.7
+- Base de donnée : mySql 5.7
 
 **Front**
 

@@ -37,13 +37,13 @@
 }
 
 .inscription{
-    width: 80%;
-    margin: 7px;
+  width: 80%;
+  margin: 7px;
 }
 
 .connection{
-    width: 50%;
-    margin: 7px;
+  width: 50%;
+  margin: 7px;
 }
 
 .btn-res{
@@ -59,23 +59,23 @@
 }
 
 //for the phone
-  @media (max-width: 767px) {
-    .inscription{
-      width: 90%;
-      margin: 7px;
+@media (max-width: 767px) {
+  .inscription{
+    width: 90%;
+    margin: 7px;                
   }
 
-  .response{
-    display:flex; 
-    justify-content:center; 
-    padding:5px
+.response{
+  display:flex; 
+  justify-content:center; 
+  padding:5px
   }
 
-  .inscription .btn-res{
-    margin-bottom: 30px;
+.inscription .btn-res{
+  margin-bottom: 30px;
   }  
 
-  .name-pre-connection{
-    margin-bottom: 25px;
+.name-pre-connection{
+  margin-bottom: 25px;
   }
-  }
+}

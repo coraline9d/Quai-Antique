@@ -1,29 +1,29 @@
-// Vérifier si l'utilisateur a déjà fait un choix
+// Check if the user has already made a choice
 if (!document.cookie.includes("accept_cookies")) {
   // Afficher la bannière de cookies
   document.getElementById("cookie-banner").style.display = "block";
 }
 
-// Gérer le clic sur le bouton "Accepter"
+// Manage the click on the "Accept" button
 document.getElementById("accept-cookies").addEventListener("click", () => {
-  // L'utilisateur a accepté les cookies
+  // User has accepted cookies
   document.cookie =
     "accept_cookies=true; expires=" +
     new Date(Date.now() + 86400000).toUTCString() +
     "; path=/";
 
-  // Masquer la bannière de cookies
+  // Hide cookie banner
   document.getElementById("cookie-banner").style.display = "none";
 });
 
-// Gérer le clic sur le bouton "Refuser"
+// Manage the click on the "Refuse" button
 document.getElementById("refuse-cookies").addEventListener("click", () => {
-  // L'utilisateur a refusé les cookies
+  // User has refused cookies
   document.cookie =
     "accept_cookies=false; expires=" +
     new Date(Date.now() + 86400000).toUTCString() +
     "; path=/";
 
-  // Masquer la bannière de cookies
+  // Hide cookie banner
   document.getElementById("cookie-banner").style.display = "none";
 });

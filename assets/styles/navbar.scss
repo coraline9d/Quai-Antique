@@ -36,19 +36,19 @@
   }
 
   .navbar-toggler{
-  border: 0px;
-  margin-top: 10px;
+    border: 0px;
+    margin-top: 10px;
  }
 
  .navbar-toggler:hover{
-  border: 0px;
-  color:$grey;
-  background-color: $grey;
+    border: 0px;
+    color:$grey;
+    background-color: $grey;
  }
  
 
  .bi-three-dots-vertical{
-  color:$creme;
+    color:$creme;
  }
 
   .nav-item {
@@ -87,34 +87,32 @@
     fill: currentcolor;
     }
   
-    svg{
-      vertical-align: auto;
-    }
+  svg{
+    vertical-align: auto;
+  }
 
-    
-  /*media queries*/
 
 // for the phone portrait
 @media screen and (max-width:699px) {   
   body {
     transition: padding-top 0.3s ease-in-out;
-}
+  } 
 
-body.navbar-expanded {
+  body.navbar-expanded {
     padding-top: 200px;
-}
+  }
 
-.nav-link {
-  font-size: 2vh;
-}
+  .nav-link {
+    font-size: 2vh;
+  } 
 
-.navbar-brand img {
-  width: 50%;
-}
+  .navbar-brand img {
+    width: 50%;
+  }
 
-.navbar{
-  padding: 10px;
-}
+  .navbar{
+    padding: 10px;
+  }
 }
 
 //for the phone landscape mode

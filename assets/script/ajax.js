@@ -1,41 +1,39 @@
-//Méthode pour la date et la capcité de personnes formulaire de réservation
+//Method for date and capacity of people booking form
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Votre code JavaScript existant ici
-
-  // Sélectionnez les champs "Nombre de personnes", "Heure de la réservation" et "Date"
+  // Select the fields "Number of people", "Reservation time" and "Date"
   const numberOfGuestsField = document.querySelector(
     "#reservation_number_of_guest"
   );
   const hourField = document.querySelector("#reservation_hour");
   const dateField = document.querySelector("#reservation_date");
 
-  // Créez une fonction pour mettre à jour les horaires
+  // Create a function to update schedules
   function updateHours() {
-    // Récupérez la valeur du champ "Nombre de personnes"
+    // Retrieve the value of the "Number of people" field
     const numberOfGuests = numberOfGuestsField.value;
 
-    // Récupérez la valeur du champ "Date"
+    // Retrieve the value of the "Date" field
     const date = dateField.value;
 
-    // Envoyez une requête AJAX au serveur pour récupérer les heures disponibles
+    // Send an AJAX request to the server to retrieve the available hours
     fetch(
       `/reservation/available-hours?number_of_guest=${numberOfGuests}&date=${date}`
     )
       .then((response) => response.json())
       .then((availableHours) => {
-        // Supprimez toutes les options du champ "Heure de la réservation"
+        // Remove all options from the "Reservation time" field
         while (hourField.firstChild) {
           hourField.removeChild(hourField.firstChild);
         }
 
-        // Ajoutez une option vide au champ "Heure de la réservation"
+        // Add an empty option to the "Reservation time" field
         const placeholderOption = document.createElement("option");
         placeholderOption.textContent = "Choisir une heure";
         placeholderOption.value = "";
         hourField.appendChild(placeholderOption);
 
-        // Ajoutez les heures disponibles en tant qu'options du champ "Heure de la réservation"
+        // Add the available times as options for the "Booking time" field
         for (const hour of availableHours) {
           const option = document.createElement("option");
           option.textContent = hour;
@@ -45,9 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // Ajoutez un écouteur d'événements pour détecter les changements de valeur du champ "Nombre de personnes"
+  // Add an event listener to detect value changes of the "Number of people" field
   numberOfGuestsField.addEventListener("change", updateHours);
 
-  // Ajoutez un écouteur d'événements pour détecter les changements de valeur du champ "Date"
+  // Add an event listener to detect value changes of the "Date" field
   dateField.addEventListener("change", updateHours);
 });
