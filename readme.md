@@ -2,6 +2,28 @@
 
 Le Quai Antique est un restaurant gastronomique, ayant pour adresse fictive le 11 rue du Quai - 75016 Paris
 
+## Spécification Techniques
+
+**Technologie**
+
+- PHP >= 8
+- Composer >= 2
+- Framework : Symfony
+- Base de donnée : Mysql 5.7
+
+**Front**
+
+- HTML5 (Twig)
+- CSS3
+- Bootstrap
+- Javascript
+
+**Back**
+
+- Minimum PHP 8.0
+- Symfony 6.2
+- mySql 5.7
+
 ## Installation Locale
 
 Pour installer le projet en local, suivez les étapes ci-dessous :

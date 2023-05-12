@@ -91,6 +91,7 @@ button:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+//for the normal phone
 @media (max-width: 767px) {    
     .form-bloc{
         display: block;
@@ -105,6 +106,7 @@ button:hover {
     }
 }
 
+//for the smallest phone
 @media (max-width: 330px) {    
     form input[type="email"]{
         width: 300px;

@@ -55,7 +55,7 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
             // Redirect to the admin page
             return new RedirectResponse($this->urlGenerator->generate('app_admin'));
         } else {
-            // Redirect to the profile page
+            // Redirect to the reservation page
             return new RedirectResponse($this->urlGenerator->generate('app_reservation_new'));
         }
     }

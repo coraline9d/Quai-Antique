@@ -37,16 +37,16 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            // Vérification des modifications apportées à l'entité User
+            // Checking changes to the User entity
             $changes = $entityManager->getUnitOfWork()->getEntityChangeSet($user);
             if (!empty($changes)) {
-                // Des modifications ont été apportées
+                // Changes have been made
                 $this->addFlash(
                     'success',
                     'Votre profil a été modifié'
                 );
             } else {
-                // Aucune modification n'a été apportée
+                // No changes have been made
                 $this->addFlash(
                     'error',
                     'Aucune modification n\'a été apportée à votre profil'
@@ -80,20 +80,20 @@ class UserController extends AbstractController
                     $manager->persist($user);
                     $manager->flush();
 
-                    // Ajout d'un message flash de succès
+                    // Add a flash success message
                     $this->addFlash('success', 'Votre mot de passe a été modifié avec succès !');
 
                     return $this->redirectToRoute('app_utilisateur_profile');
                 } else {
-                    // Le nouveau mot de passe est identique à l'ancien
+                    // The new password is identical to the old one
                     $this->addFlash('warning', 'Le nouveau mot de passe doit être différent de l\'ancien');
                 }
             } else {
-                // Le mot de passe actuel est incorrect
+                // The current password is incorrect
                 $this->addFlash('error', 'Le mot de passe actuel est incorrect');
             }
         } elseif ($form->isSubmitted() && !$form->isValid()) {
-            // Le formulaire est invalide
+            // The form is invalid
             $this->addFlash('error', 'Le formulaire est invalide');
         }
         return $this->render('user/editpassword.html.twig', [

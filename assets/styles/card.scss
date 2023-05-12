@@ -41,20 +41,21 @@
     overflow-y: auto; /* Ajoute un défilement si nécessaire */
 }
 
+ //for the desktop
 @media (min-width: 1025px) {
     .food-card {
       column-count: 3;
     }
   }
   
-  /* Pour les tablettes */
+  //for the tablet
   @media (min-width: 768px) and (max-width: 1024px) {
     .food-card {
       column-count: 2;
     }
   }
   
-  /* Pour les téléphones */
+ //for the phone
   @media (max-width: 767px) {
     .food-card {
       column-count: 1;

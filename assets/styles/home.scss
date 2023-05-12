@@ -134,6 +134,7 @@ header img {
     text-align: justify;
 }
 
+//for the phone
 @media (max-width: 767px) {
 header img {
     width: 100%;
@@ -175,6 +176,7 @@ header img {
 }
 }
 
+//for the tablet
 @media (min-width: 768px) and (max-width: 1024px) {
     .card {
     margin-bottom: 20px;

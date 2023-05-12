@@ -63,6 +63,7 @@ footer a:hover {
     text-align: center;
   }
 
+  //for the phone
   @media only screen and (max-width: 767px) {
     footer .container .column:first-child {
       display: none;
@@ -100,6 +101,7 @@ footer a:hover {
     }
   }
 
+  //for the tablet
   @media only screen and (min-width: 768px) and (max-width: 1199px)  {
     footer .container .column:first-child {
       display: none;

@@ -1,8 +1,8 @@
 {
-  "build/app.css": "/build/app.b2175885.css",
-  "build/app.js": "/build/app.af05ab49.js",
-  "build/runtime.js": "/build/runtime.128f49ae.js",
-  "build/255.e3a046e5.js": "/build/255.e3a046e5.js",
+  "build/app.css": "/build/app.css",
+  "build/app.js": "/build/app.js",
+  "build/runtime.js": "/build/runtime.js",
+  "build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_core-js_modules_es_array-1f1c24.js": "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js-node_modules_core-js_modules_es_array-1f1c24.js",
   "build/images/fish.jpg": "/build/images/fish.jpg",
   "build/images/ice.jpg": "/build/images/ice.jpg",
   "build/images/carousel2.jpg": "/build/images/carousel2.jpg",

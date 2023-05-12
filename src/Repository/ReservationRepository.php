@@ -41,19 +41,19 @@ class ReservationRepository extends ServiceEntityRepository
 
     public function getNumberOfGuestsForPeriod(string $dateString, int $startHour, int $endHour): int
     {
-        // Créez un tableau pour stocker les heures de début et de fin de chaque créneau de 15 minutes
+        // Create an array to store the start and end times of each 15 minute slot
         $timeStrings = [];
 
-        // Parcourez toutes les heures entre l'heure de début et l'heure de fin
+        // Cycle through all times between start time and end time
         for ($i = $startHour; $i < $endHour; $i++) {
-            // Parcourez tous les créneaux de 15 minutes pour chaque heure
+            // Cycle through all 15-minute slots for each hour
             for ($j = 0; $j < 60; $j += 15) {
-                // Formatez l'heure en chaîne de caractères
+                // Format the time as a string
                 $timeStrings[] = sprintf('%02d:%02d', $i, $j);
             }
         }
 
-        // Récupérez le nombre total de personnes réservées pour la période donnée
+        // Retrieve the total number of people booked for the given period
         $numberOfGuests = $this->createQueryBuilder('r')
             ->select('SUM(r.number_of_guest)')
             ->where('r.date = :date')

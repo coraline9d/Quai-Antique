@@ -66,20 +66,20 @@ class DateSubscriber implements EventSubscriberInterface
 
         $dayOfWeek = $daysOfWeek[$dayOfWeek];
 
-        // Trouvez les horaires pour le jour de la semaine sélectionné
+        // Find the times for the selected day of the week
         $daySchedule = $this->scheduleRepository->findOneBy(['day' => $dayOfWeek]);
 
-        // Trouvez les horaires pour le nombre de convive sélectionné
+        // Find the times for the number of guests selected
         $schedule = $this->scheduleRepository->findOneBy([]);
 
-        // Si les horaires pour le jour sélectionné sont trouvés, mettez à jour les heures d'ouverture, de fermeture et de pause déjeuner
+        // If times for the selected day are found, update the opening, closing and lunch break times
         if ($daySchedule) {
             $openingHour = $daySchedule->getOpeningHour();
             $closingHour = $daySchedule->getClosingHour();
             $beginningBreakHour = $daySchedule->getBeginningBreakHour();
             $endingBreakHour = $daySchedule->getEndingBreakHour();
         }
-        // Si les horaires pour le jour sélectionné ne sont pas trouvés, utilisez les horaires par défaut
+        // If the times for the selected day are not found, use the default times
         else {
             $openingHour = $schedule->getOpeningHour();
             $closingHour = $schedule->getClosingHour();
@@ -87,21 +87,21 @@ class DateSubscriber implements EventSubscriberInterface
             $endingBreakHour = $schedule->getEndingBreakHour();
         }
 
-        // Récupérez la capacité du restaurant (nombre de personnes)
+        // Retrieve restaurant capacity (number of people)
         $capacity = $schedule->getCapacity();
 
-        // Créez un tableau pour stocker les heures disponibles
+        // Create an array to store available hours
         $availableHours = [];
         $lunch = [];
         $dinner = [];
 
-        // Récupérez le nombre total de personnes réservées pour le midi
+        // Retrieve the total number of people booked for lunch
         $lunchGuests = $this->reservationRepository->getNumberOfGuestsForPeriod($dateString, $openingHour, $beginningBreakHour);
 
-        // Si le nombre total de personnes réservées pour le midi plus le nombre de personnes pour la nouvelle réservation est inférieur ou égal à la capacité du restaurant, ajoutez les heures du midi au tableau des heures disponibles
+        // If the total number of people booked for lunch plus the number of people for the new reservation is less than or equal to the capacity of the restaurant, add the lunch hours to the table of available times
         if (($lunchGuests + $numberOfGuests <= $capacity)) {
             for ($i = $openingHour; $i < $beginningBreakHour; $i++) {
-                // Formatez l'heure en chaîne de caractères
+                // Format the time as a string
                 $hour = sprintf('%02d', $i);
                 if ($i != $beginningBreakHour - 1) {
                     $lunch[] = $hour . ':00';
@@ -115,11 +115,11 @@ class DateSubscriber implements EventSubscriberInterface
             $availableHours = array_merge($availableHours, $lunch);
         };
 
-        // Récupérez le nombre total de personnes réservées pour le soir
+        // Retrieve the total number of people booked for the evening
         $dinnerGuests = $this->reservationRepository->getNumberOfGuestsForPeriod($dateString, $endingBreakHour, $closingHour);
         if (($dinnerGuests + $numberOfGuests <= $capacity)) {
             for ($i = $endingBreakHour; $i < $closingHour; $i++) {
-                // Formatez l'heure en chaîne de caractères
+                // Format the time as a string
                 $hour = sprintf('%02d', $i);
                 if ($i != $closingHour - 1) {
                     $dinner[] = $hour . ':00';

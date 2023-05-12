@@ -31,7 +31,7 @@ class ReservationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $reservationRepository->save($reservation, true);
 
-            // Ajout d'un message flash de succès
+            //  Add flash success message
             $this->addFlash('success', 'Votre réservation a été enregistrée avec succès ! Profitez-en pour préparer votre repas en avance ;)');
 
             return $this->redirectToRoute('app_card', [], Response::HTTP_SEE_OTHER);
@@ -46,14 +46,14 @@ class ReservationController extends AbstractController
     #[Route('/available-hours', name: 'available_hours', methods: ['GET'])]
     public function availableHours(DateSubscriber $dateSubscriber, Request $request): JsonResponse
     {
-        // Récupérez la date et le nombre d'invités sélectionnés par l'utilisateur
+        // Retrieve the date and number of guests selected by the user
         $dateString = $request->query->get('date');
         $numberOfGuests = $request->query->get('number_of_guest');
 
-        // Utilisez la méthode calculateAvailableHours de DateSubscriber pour calculer les heures disponibles
+        // Use method calculateAvailableHours of DateSubscriber to calculate available hours
         $availableHours = $dateSubscriber->calculateAvailableHours($dateString, $numberOfGuests);
 
-        // Renvoyez les heures disponibles au format JSON
+        // Return available times in JSON format
         return new JsonResponse($availableHours);
     }
 
