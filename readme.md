@@ -1,6 +1,6 @@
 # Bienvenue sur le Quai Antique - Paris XVI
 
-Le Quai Antique est un restaurant gastronomique, ayant pour adresse fictive le 11 rue du Quai - 75016 Paris
+Le Quai Antique est un restaurant gastronomique, ayant pour site web : https://quaiantiqueparis.fr
 
 ## Spécifications Techniques
 
