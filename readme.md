@@ -14,7 +14,7 @@ Le Quai Antique est un restaurant gastronomique fictif, ayant pour site web : ht
 **Front**
 
 - HTML5 (Twig)
-- CSS3
+- SCSS
 - Bootstrap
 - Javascript
 
