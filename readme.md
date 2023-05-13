@@ -1,6 +1,6 @@
 # Bienvenue sur le Quai Antique - Paris XVI
 
-Le Quai Antique est un restaurant gastronomique, ayant pour site web : https://quaiantiqueparis.fr
+Le Quai Antique est un restaurant gastronomique fictif, ayant pour site web : https://quaiantiqueparis.fr
 
 ## Spécifications Techniques
 
