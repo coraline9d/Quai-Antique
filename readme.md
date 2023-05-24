@@ -46,9 +46,9 @@ composer install
 npm install
 ```
 
-4. La base de données se trouve dans le fichier `.env.local` (temporairement disponible), vous n’avez donc pas besoin de la créer.
+4. La base de données se trouve dans le fichier `.env.local` (me contacter pour y avoir accès), vous n’avez donc pas besoin de la créer.
 
-5. Pour configurer le serveur SMTP, remplissez vos identifiants et mot de passe (par exemple, ceux de Mailtrap) dans le fichier `.env.local` .
+5. Pour configurer le serveur SMTP, remplissez vos identifiants et mot de passe (par exemple ceux de Mailtrap) dans le fichier `.env.local` .
 
 6. Utilisant Webpack Encore, il faut construire les assets avec npm :
 
