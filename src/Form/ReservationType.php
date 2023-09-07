@@ -57,7 +57,6 @@ class ReservationType extends AbstractType
                     ]),
                 ]
             ])
-
             ->add('number_of_guest', IntegerType::class, [
                 'label' => 'Nombre de personnes :',
                 'attr' => [

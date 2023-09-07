@@ -14,10 +14,11 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
+#[Route('/utilisateur')]
 class UserController extends AbstractController
 {
     #[IsGranted('ROLE_USER')]
-    #[Route('/utilisateur/profil', name: 'app_utilisateur_profile', methods: ['GET', 'POST'])]
+    #[Route('/profil', name: 'app_utilisateur_profile', methods: ['GET', 'POST'])]
     public function edit(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = $this->getUser();
@@ -60,7 +61,7 @@ class UserController extends AbstractController
     }
 
     #[IsGranted('ROLE_USER')]
-    #[Route('/utilisateur/modification-mot-de-passe', name: 'app_utilisateur_password', methods: ['GET', 'POST'])]
+    #[Route('/modification-mot-de-passe', name: 'app_utilisateur_password', methods: ['GET', 'POST'])]
     public function password(Request $request, EntityManagerInterface $manager, UserPasswordHasherInterface $hasher): Response
     {
         $user = $this->getUser();
