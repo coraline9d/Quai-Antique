@@ -4,31 +4,36 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
-		<h1 class="title">MODIFICATION DU PROFIL</h1>
+	<main>
+		<div class="container">
+			<article>
+				<h1 class="title">MODIFICATION DU PROFIL</h1>
+				<aside>
+					{% for message in app.flashes('success') %}
+						<div class="alert alert-success mt-4 flash">
+							{{ message }}
+						</div>
+					{% endfor %}
 
-		{% for message in app.flashes('success') %}
-			<div class="alert alert-success mt-4 flash">
-				{{ message }}
-			</div>
-		{% endfor %}
+					{% for message in app.flashes('error') %}
+						<div class="alert alert-danger flash">
+							{{ message }}
+						</div>
+					{% endfor %}
+				</aside>
+				<div class="form">
+					{{ form_start(form,  {'attr':{'novalidate':'novalidate'}}) }}
+					{{ form_row(form.email) }}
+					{{ form_row(form.firstname) }}
+					{{ form_row(form.lastname) }}
+					{{ form_row(form.phone) }}
+					<button type="submit">
+						MODIFIER MON PROFIL
+					</button>
+					{{ form_end(form) }}
+				</div>
+			</article>
 
-		{% for message in app.flashes('error') %}
-			<div class="alert alert-danger flash">
-				{{ message }}
-			</div>
-		{% endfor %}
-
-		<div class="form">
-			{{ form_start(form,  {'attr':{'novalidate':'novalidate'}}) }}
-			{{ form_row(form.email) }}
-			{{ form_row(form.firstname) }}
-			{{ form_row(form.lastname) }}
-			{{ form_row(form.phone) }}
-			<button type="submit">
-				MODIFIER MON PROFIL
-			</button>
-			{{ form_end(form) }}
 		</div>
-	</div>
+	</main>
 {% endblock %}

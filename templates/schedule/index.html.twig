@@ -4,15 +4,19 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="title">CRÉATION RÉUSSIE</h1>
-	<div>
-		<p class="desc-error">
-			Bienvenue chez le Quai Antique
-		</p>
-		<p class="link-error">
-			Vous pouvez désormais aller vous balader sur notre site, en cliquant sur ce
-			<a href="{{path('app_card')}}">lien</a>
-			par exemple.
-		</p>
-	</div>
+	<main>
+		<h1 class="title">CRÉATION RÉUSSIE</h1>
+		<aside>
+			<div>
+				<p class="desc-error">
+					Bienvenue chez le Quai Antique
+				</p>
+				<p class="link-error">
+					Vous pouvez désormais aller vous balader sur notre site, en cliquant sur ce
+					<a href="{{path('app_card')}}">lien</a>
+					par exemple.
+				</p>
+			</div>
+		</aside>
+	</main>
 {% endblock %}
