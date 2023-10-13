@@ -69,9 +69,6 @@ class DateSubscriber implements EventSubscriberInterface
         // Find the times for the selected day of the week
         $daySchedule = $this->scheduleRepository->findOneBy(['day' => $dayOfWeek]);
 
-        // Find the times for the number of guests selected
-        $schedule = $this->scheduleRepository->findOneBy([]);
-
         // If times for the selected day are found, update the opening, closing and lunch break times
         if ($daySchedule) {
             $openingHour = $daySchedule->getOpeningHour();
@@ -79,16 +76,9 @@ class DateSubscriber implements EventSubscriberInterface
             $beginningBreakHour = $daySchedule->getBeginningBreakHour();
             $endingBreakHour = $daySchedule->getEndingBreakHour();
         }
-        // If the times for the selected day are not found, use the default times
-        else {
-            $openingHour = $schedule->getOpeningHour();
-            $closingHour = $schedule->getClosingHour();
-            $beginningBreakHour = $schedule->getBeginningBreakHour();
-            $endingBreakHour = $schedule->getEndingBreakHour();
-        }
 
         // Retrieve restaurant capacity (number of people)
-        $capacity = $schedule->getCapacity();
+        $capacity = $daySchedule->getCapacity();
 
         // Create an array to store available hours
         $availableHours = [];
